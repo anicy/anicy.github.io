@@ -48,7 +48,7 @@ JB :
   comments :
     provider : duoshuo              # 采用那种评论，duoshuo 或 disqus ....
     
-   duoshuo :
+    duoshuo :
       name : dcycome
       rcomments :                  
         num: 5                     # 最新评论显示条数
