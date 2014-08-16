@@ -1,21 +1,21 @@
 # Site settings
-title: "Havee's Space"
+title: "Oo's Space"
 description: "linux, gentoo, internet, sql, jekyll, BSD, MAC, havee"
-keywords: "Havee Hobbies, Knowledge Records。"
+keywords: "。"
 baseurl: ""
-url: "//havee.me"
+url: "//dcycome.vicp.net"
 highlighter: pygments
 paginate: 5
 author:
-    name: Havee
-    github: Ihavee
+    name: dcyome
+    github: dcycome
     email:
-    gitcafe: Havee
-    twitter:
-    facebook:
+    gitcafe: 
+    twitter: 
+    facebook: thinkhm
     googleplus:
-    weibo: Havanna
-qiniudn: //havee.qiniudn.com
+    weibo: SupreDream
+qiniudn: //dycome.qiniudn.com
 atom_path: /atom.xml
 rss_path: /rss.xml
 
@@ -29,7 +29,7 @@ permalink: /:categories/:year-:month/:title.html
 comments:
     provider: duoshuo
     duoshuo:
-        name: havanna
+        name: dcycome
         rcomments:
             num: 10
             avatar: 0
