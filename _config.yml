@@ -17,7 +17,6 @@ keywords : linux ,machine learning ,data mining , R , Hadoop ,Spark
 description: happy wife , happy life ...
 author :
   name :  Oo
-  email : 
   github : dcycome
   gitcafe : 
   twitter :
@@ -48,17 +47,7 @@ JB :
   # 评论，provider 留空或 false 关闭评论
   comments :
     provider : duoshuo              # 采用那种评论，duoshuo 或 disqus ....
-    disqus :
-      short_name :
-    livefyre :
-      site_id :
-    intensedebate :
-      account :
-    facebook :
-      appid :
-      num_posts:
-      width: 580
-      colorscheme: light
+    
     duoshuo :
       name : dcycome
       rcomments :                   # 首页侧边栏最新评论
