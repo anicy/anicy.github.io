@@ -45,33 +45,20 @@ JB :
   atom_path : /atom.xml
   rss_path : /rss.xml
 
-  # 评论，provider 留空或 false 关闭评论
-  comments :
-    provider : duoshuo              # 采用那种评论，duoshuo 或 disqus ....
-    disqus :
-      short_name :
-    livefyre :
-      site_id :
-    intensedebate :
-      account :
-    facebook :
-      appid :
-      num_posts:
-      width: 580
-      colorscheme: light
-    duoshuo :
-      name : dcycome 
-      rcomments :                   # 首页侧边栏最新评论
-        num: 5                     # 最新评论显示条数
-        avatar :  0                 # 最新评论是否显示头像
-        time: 0
-        title : 0
-        admin : 0
-        length : 12                 # 最新评论显示的长度
-      rvisitors : 1                   # 首页侧边栏最新访客
-        num : 12                    # 最新访客数目
-        size : 45                   # 最新访客头像的尺寸
-
+ # comment
+comments:
+    provider: duoshuo
+    duoshuo:
+        name: havanna
+        rcomments:
+            num: 10
+            avatar: 0
+            time: 0
+            title: 0
+            admin: 0
+            length: 12
+            
+            
   # 网站统计
   analytics :
     provider : baidu                # 采用那种统计，baidu 或 google ...
