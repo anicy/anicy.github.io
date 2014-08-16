@@ -3,19 +3,19 @@ title: "Oo's Space"
 description: "linux, gentoo, internet, sql, jekyll, BSD, MAC, havee"
 keywords: "linux, gentoo, internet, sql, jekyll, BSD, MAC, havee"
 baseurl: ""
-url: "http://dcycome.vicp.net"
+url: "//dcycome.vicp.net"
 highlighter: pygments
 paginate: 5
 author:
-    name: dcyome
+    name: Oo
     github: dcycome
     email:
     gitcafe: 
-    twitter: 
-    facebook: thinkhm
+    twitter:
+    facebook:
     googleplus:
     weibo: SupreDream
-qiniudn: "http://dycome.qiniudn.com"
+qiniudn: //havee.qiniudn.com
 atom_path: /atom.xml
 rss_path: /rss.xml
 
@@ -40,10 +40,10 @@ comments:
 # 网站统计
 analytics:
     baidu:
-        siteid: 707c49682d45342c4abaa7f2fbdd23dd        # 百度统计 js 代码后的字符串
+        siteid:         # 百度统计 js 代码后的字符串
 
 # blogroll
-blogroll: true
+blogroll: false
 brlist:
     - text: "刘静的博客"
       url : //upliu.net/
