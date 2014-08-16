@@ -1,13 +1,13 @@
 # 链接样式，参考 http://jekyllrb.com/docs/permalinks
-permalink: /:categories/:year-:month/:title.html
+permalink : /:categories/:year-:month/:title.html
 
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-highlighter: pygments
+exclude : [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+highlighter : pygments
 paginate: 5
 
-markdown: redcarpet             # markdown 语法解释引擎
-redcarpet:
-    extensions: ["fenced_code_blocks", "tables", "highlight", "strikethrough"]
+markdown : redcarpet             # markdown 语法解释引擎
+redcarpet :
+    extensions : ["fenced_code_blocks", "tables", "highlight", "strikethrough"]
 # 参考 http://github.com/vmg/redcarpet/blob/master/README.markdown
 
 # 核心设置
@@ -39,7 +39,7 @@ JB :
   ASSET_PATH : false                # 同上
 
   # page
-  archive_path: /archive.html
+  archive_path : /archive.html
   categories_path : /categories.html
   tags_path : /tags.html
   atom_path : /atom.xml
