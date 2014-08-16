@@ -1,9 +1,9 @@
 # Site settings
 title: "Oo's Space"
 description: "linux, gentoo, internet, sql, jekyll, BSD, MAC, havee"
-keywords: "。"
+keywords: "linux, gentoo, internet, sql, jekyll, BSD, MAC, havee"
 baseurl: ""
-url: "//dcycome.vicp.net"
+url: "http://dcycome.vicp.net"
 highlighter: pygments
 paginate: 5
 author:
@@ -15,7 +15,7 @@ author:
     facebook: thinkhm
     googleplus:
     weibo: SupreDream
-qiniudn: //dycome.qiniudn.com
+qiniudn: "http://dycome.qiniudn.com"
 atom_path: /atom.xml
 rss_path: /rss.xml
 
