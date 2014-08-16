@@ -49,7 +49,7 @@ JB :
     provider : duoshuo              # 采用那种评论，duoshuo 或 disqus ....
     
     duoshuo :
-      name : dcycome
+    
       rcomments :                   # 首页侧边栏最新评论
         num: 5                     # 最新评论显示条数
         avatar :  0                 # 最新评论是否显示头像
