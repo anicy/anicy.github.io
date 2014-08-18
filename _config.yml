@@ -12,9 +12,9 @@ redcarpet:
 
 # 核心设置
 title : Oo
-tagline:linux ,machine learning ,data mining , R , Hadoop ,Spark
+tagline : linux ,machine learning ,data mining , R , Hadoop ,Spark
 keywords : linux ,machine learning ,data mining , R , Hadoop ,Spark
-description: big data, linux ,machine learning ,data mining , R , Hadoop ,Spark , kdd cup , kdd ,mahout ,机器学习 ,人工智能 ,大数据
+description : big data, linux ,machine learning ,data mining , R , Hadoop ,Spark , kdd cup , kdd ,mahout ,机器学习 ,人工智能 ,大数据
 author :
   name :  Oo
   email : 
