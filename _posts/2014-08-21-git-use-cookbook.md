@@ -8,6 +8,7 @@ tags: [linux,git]
 ---
 
 
+
 >Git是一个分布式版本控制／软件配置管理软件，原是Linux内核开发者林纳斯·托瓦兹（Linus Torvalds）为更好地管理Linux内核开发而设计。应注意的是，这与GNU Interactive Tools有所不同。Git最初的开发动力来自于BitKeeper和Monotone。Git最初只是作为一个可以被其他前端包装的后端而开发的，但后来Git内核已经成熟到可以独立地用作版本控制。很多著名的软件都使用Git进行版本控制，其中包括Linux内核、X.Org服务器和OLPC内核等项目的开发流程             ——[wiki](http://zh.wikipedia.org/wiki/Git)
 
 ####创建新仓库
