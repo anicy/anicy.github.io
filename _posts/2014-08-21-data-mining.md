@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "Data mining"
-description: ""
+title: "数据挖掘建模
+description: "数据挖掘建模"
 keywords: data mining
 category: data mining
 tags: [data,method]
 ---
 
 
-##数据挖掘建模
+
 
 > 数据+工具+方法+目标+行动=价值
 
