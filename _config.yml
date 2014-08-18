@@ -64,7 +64,7 @@ JB :
     duoshuo :
       name : dcycome              # 多说上获取的 shortname
       rcomments :                   # 首页侧边栏最新评论
-        num: 10                     # 最新评论显示条数
+        num:  5                     # 最新评论显示条数
         avatar : 0                  # 最新评论是否显示头像
         time: 0
         title : 0
@@ -97,7 +97,7 @@ JB :
   
 
   # 友情链接
-  blogroll : false                   # true 开启，留空或 false 关闭
+  blogroll : true                   # true 开启，留空或 false 关闭
   brlist :
-    - text : Havee's Space
-      url : //havee.cme/
+    - text : Oo's Space
+      url : //dcycome.vicp.net/about.html
