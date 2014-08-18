@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Data mining"
+title: "Study plan"
 description: ""
 keywords: data mining
 category: data mining
