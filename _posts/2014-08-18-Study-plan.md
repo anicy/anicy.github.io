@@ -13,13 +13,10 @@ tags: [data,method]
 - spark
 - github markdown
 - atrice
-- hell00
+- hell1000
 
 ---
 
 
 <!-- more -->
 
-- daf
-- fad
-- dfadfaf
