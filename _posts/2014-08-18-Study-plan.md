@@ -17,6 +17,9 @@ tags: [data,method]
 
 ---
 
+
+<!-- more -->
+
 - daf
 - fad
 - dfadfaf
