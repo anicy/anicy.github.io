@@ -1,5 +1,3 @@
-### Study plan
-
 ---
 layout: post
 title: "Data mining"
@@ -8,6 +6,9 @@ keywords: data mining
 category: data mining
 tags: [data,method]
 ---
+
+
+### Study plan
 
 - spark
 - github markdown
@@ -19,5 +20,3 @@ tags: [data,method]
 - daf
 - fad
 - dfadfaf
-
-jj
