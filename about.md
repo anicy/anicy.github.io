@@ -15,7 +15,7 @@ group: navigation
 
 
 
-I am a Computer Science student at South China University of Technological, Guangzhou.
+I am a Computer Science student at South China University of Technology, Guangzhou.
 
 I love Python strings as much as I love Java.
 
