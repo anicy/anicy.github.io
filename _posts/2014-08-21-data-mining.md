@@ -3,7 +3,7 @@ layout: post
 title: "数据挖掘建模"
 description: "数据挖掘建模"
 keywords: 数据挖掘,data mining
-category: Linux,weka,data mining
+category: data mining
 tags: [data mining,数据挖掘,method]
 ---
 
