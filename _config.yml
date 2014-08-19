@@ -18,7 +18,7 @@ description : big data, linux ,machine learning ,data mining , R , Hadoop ,Spark
 author :
   name :  Oo
   email : 
-  github : dcycome
+  github :
   gitcafe : 
   twitter :
   facebook : thinkhm 
@@ -100,4 +100,4 @@ JB :
   blogroll : true                   # true 开启，留空或 false 关闭
   brlist :
     - text : Oo's Space
-      url : //dcycome.vicp.net/about.html
+      url : http://dcycome.vicp.net/about.html
