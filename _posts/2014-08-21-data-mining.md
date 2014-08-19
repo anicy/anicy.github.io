@@ -1,14 +1,11 @@
 ---
 layout: post
-title: "数据挖掘建模
+title: "数据挖掘建模"
 description: "数据挖掘建模"
-keywords: data mining
-category: data mining
-tags: [data,method]
+keywords: 数据挖掘,data mining
+category: Linux,weka,data mining
+tags: [data mining,数据挖掘,method]
 ---
-
-
-
 
 > 数据+工具+方法+目标+行动=价值
 
