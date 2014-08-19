@@ -1,5 +1,15 @@
+---
+layout: post
+title: "那些让人相见恨晚的工具"
+description: "那些让人相见恨晚的工具,根本停不下来..."
+keywords: tools,fun,github,markdown
+category: tools 
+tags: [tools,fun,github,markdown]
+---
+
+
 ### 那些让人相见恨晚的工具
-@(MarkDownFree)[tools|web|web]
+
 
 有没有哪些工具让你觉得一用上就根本停不下来？有没有一种感叹 为什么没有早点发现它们...
 下面是我自己用过的一些工具，以后还会继续补充...
@@ -8,7 +18,7 @@
 
 2. 印象笔记   多平台同步+网页裁剪 
 3. 马克飞象   所见即所得,使用 [markdown语法](http://dcycome.vicp.net/linux/2014-08/markdown-sys.html)书写，专注于写作，不用关心排版真心就是停不下来,这篇文章就是用md写的，关键是还能直接粘贴图片，感谢万能的md
-![pic]({{ site.qiniudn }}/images/md.png)
+![pic]({{ site.qiniudn }}/images/mk.png)
 
 4. git 作为一名"艺术家"(not a coder) 不知道git实在是不知道该怎么表达我此刻的心情，这么优秀的
 作品，你值得去欣赏. 附上[git简易参考指南](http://dcycome.vicp.net/linux/2014-08/git-bak.html)科普一下。建议在linux下使用，win的那么客户端能做的事情实在是太少了。
