@@ -1,5 +1,5 @@
 .hll { background-color: #ffffcc }
- { background: #f0f0f0; }
+
 .c { color: #60a0b0; font-style: italic } /* Comment */
 .err { border: 1px solid #FF0000 } /* Error */
 .k { color: #007020; font-weight: bold } /* Keyword */
@@ -59,6 +59,4 @@
 .vc { color: #bb60d5 } /* Name.Variable.Class */
 .vg { color: #bb60d5 } /* Name.Variable.Global */
 .vi { color: #bb60d5 } /* Name.Variable.Instance */
-
-
-.il { color: #3677a9 } /* Literal.Number.Integer.Long */
+.il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
