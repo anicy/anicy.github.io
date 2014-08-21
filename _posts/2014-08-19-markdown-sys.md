@@ -747,4 +747,5 @@ Mac 平台
 * [Sublime Text 2](http://www.sublimetext.com/2) + [MarkdownEditing](http://ttscoff.github.com/MarkdownEditing/) / [教程](http://lucifr.com/2012/07/12/markdownediting-for-sublime-text-2/)
 
 转自：[http://wowubuntu.com/markdown/](http://wowubuntu.com/markdown/)
+特别鸣谢: [havee](http://havee.me/internet/2013-07/markdown-syntax.html)
 
