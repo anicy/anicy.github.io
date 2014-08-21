@@ -20,9 +20,10 @@ scikit learning 是一个python的[机器学习](http://dcycome.vicp.net/categor
 
 ####加载数据集
 在使用sk-learing进行机器学习时，我们需要先将数据加载到内存中，sk使用的是python写的，对于数据的读写具体的操作语言可以参看相关文档[python快速指南](#)，下面简单记录sk中读入数据的过程。
+
  ```python
  #这是使用内置的数据集 机器学习中很经典的一个紫苑花数据集
- >>> from sklearn import datasets
+ \>\>\> from sklearn import datasets
  >>> iris = datasets.load_iris()
  >>> digits = datasets.load_digits()
  
