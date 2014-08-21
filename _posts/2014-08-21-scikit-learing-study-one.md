@@ -108,9 +108,9 @@ array([0])
 ```
 
 ####参考
- [1] https://github.com/scikit-learn/scikit-learn
- [2] http://scikit-learn.org/stable/tutorial/basic/tutorial.html
- [3] http://dcycome.vicp.net/linux/2014-08/markdown-sys.html
+ [1] https://github.com/scikit-learn/scikit-learn   
+ [2] http://scikit-learn.org/stable/tutorial/basic/tutorial.html    
+ [3] http://dcycome.vicp.net/linux/2014-08/markdown-sys.html     
  
 
 
