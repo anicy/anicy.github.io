@@ -8,7 +8,6 @@ tags: [ml ,machine learning ,data mining ,python ]
 ---
 
 
-###sk\-learning学习笔记(1)
 
 ####简介
 scikit learning 是一个python的[机器学习](http://dcycome.vicp.net/categories.html#ml-ref)库,内置许多机器学习的算法诸如svm、随机森林、逻辑回归、贝叶斯网络等算法。覆盖了分类、聚类、回归、降维处理、模型选择等诸多方面的内容。具体介绍可以参见[官网](http://scikit-learn.org/stable/index.html),也可以fork源代码进行学习，或者成为contributer，fork地址在[这里](https://github.com/scikit-learn/scikit-learn)。
