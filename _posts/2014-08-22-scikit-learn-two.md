@@ -8,7 +8,7 @@ tags: [ml ,machine learning ,data mining ,python ]
 ---
 
 
-### sk-learning 学习(2)
+
 
 
 ####sklearing 训练评估
