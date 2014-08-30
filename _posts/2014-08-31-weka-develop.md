@@ -1,0 +1,221 @@
+---
+layout: post
+title: "Weka 二次开发使用心得"
+description: "weka提供的功能有数据预处理、特征选择、分类、回归、聚类、关联规则、可视化等，本文旨在记录学习过程遇到的知识点以及使用方法，备忘用。"
+keywords: weka,machine learning,ml,tools,data mining
+category: data mining 
+tags: [weka,machine learning,ml,tools,data mining]
+---
+
+
+
+###一、weka数据挖掘流程
+
+---
+
+使用weka图形界面，初步尝试了下数据的预处理、分类、关联等操作，因为weka本身就是一个开源的机器学习库，于是想自己尝试下利用weka的api进行相关的学习。
+在Eclipse中新建一个工程，导入weka.jar，就可以开始编写代码了，具体的配置很简单，不清楚的话网上有很多的参考教程，这里只是记录一些学习中大致的过程。
+
+
+
+<!-- more -->
+
+
+[weka](http://www.cs.waikato.ac.nz/ml/weka/)作为开源的数据挖掘平台，封装了很多优秀的[机器学习算法](http://www.cs.waikato.ac.nz/~ml/weka/book.html)，它进行数据挖掘的过程一般如下：
+1. 读入训练、测试样本
+2. 初始化分类器
+3. 使用训练样本训练分类器
+4. 使用测试样本测试分类器的学习效果
+5. 打印分类结果
+
+下面是*示例代码*，其中引入的jar包没有给出，届时可以在Eclipse中使用快捷键`ctrl+shift+o` 来自动导入所需要的包。
+
+```java
+public class WekaTest {
+	public static void main(String[] args) throws Exception {
+		//读取训练数据
+		Instances ins=null;
+		Classifier cfs=null;
+		File file=new File("data/iris.arff");
+		ArffLoader loader=new ArffLoader();
+		loader.setFile(file);
+		ins=loader.getDataSet();
+		ins.setClassIndex(ins.numAttributes()-1);
+		//初始化分类器
+        cfs = (Classifier)Class.forName("weka.classifiers.bayes.NaiveBayes").newInstance();
+        //使用训练样本进行分类
+        cfs.buildClassifier(ins);
+        //使用测试样本测试分类器的学习效果 ，这里使用的还是原来的数据集，只是为了方便
+        //具体操作过程中需要导入新的测试数据
+        Instance testInst;
+        Evaluation testingEvaluation = new Evaluation(ins);
+        int length = ins.numInstances();
+        for(int i = 0; i < length ; i++){
+           testInst = ins.instance(i);
+           testingEvaluation.evaluateModelOnceAndRecordPrediction(cfs, testInst);
+        }
+        //打印分类结果
+        System.out.println("right classifier=="+(1-testingEvaluation.errorRate()));
+	}
+}
+```
+
+大体的学习和评测过程就是这样，然后可能在不同的应用中会选择不同的算法或者其他参数等。这个还在进一步摸索之中。
+
+备注：
+使用weka进行模型的训练过程中，如果没有测试集，可以采用k-fold交叉验证的方式。
+
+```java
+        //why not like this?
+        testingEvaluation.evaluateModel(cfs, ins);
+        System.out.println(1-testingEvaluation.errorRate());
+        
+        // k-fold cross evaluation
+        Evaluation tencrosseva=new Evaluation(ins);
+        tencrosseva.crossValidateModel(cfs, ins, 14, new Random(1));
+        System.out.println(1-tencrosseva.errorRate());
+        
+        //save the model
+        SerializationHelper.write("data/knn.model", cfs);
+        
+        //load the model
+        Classifier clf_name = (Classifier) SerializationHelper.read("data/knn.model");
+```
+
+常用分类器介绍，有些名字笔记晦涩。
+- bayes下的Naïve Bayes（朴素贝叶斯）和BayesNet（贝叶斯信念网络）。
+- functions下的LibLinear、LibSVM（这两个需要安装扩展包）、Logistic Regression、Linear Regression
+- lazy下的IB1（1-NN）和IBK（KNN）。 
+- meta下的很多boosting和bagging分类器，比如AdaBoostM1。 
+- trees下的J48（weka版的C4.5）、RandomForest。 
+
+
+###二、weka 属性选择 
+
+---
+
+>在数据挖掘的研究中，通常要通过距离来计算样本之间的距离，而样本距离是通过属性值来计算的。我们知道对于不同的属性，它们在样本空间的权重是不一样的，即它们与类别的关联度是不同的，因此有必要筛选一些属性或者对各个属性赋一定的权重。这样属性选择的方法就应运而生了。  ——[weka属性选择](http://blog.csdn.net/anqiang1984/article/details/4048177)
+
+
+这里我使用的是kdd99 进行网络入侵检测的10%数据集合（大概4w多条记录），每条记录包含41个特征属性以及一个类标签。使用weka训练这么点数据的时候显得还是有点吃力，因为有些属性是相关而且相对冗余，有必要对其进行属性的选择，可以理解成[主成分分析PCA](http://zh.wikipedia.org/wiki/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90)不？有些概念还是比较模糊，一定要理解清楚。
+
+####导入kdd99数据集
+默认安装的堆内存只有1024m ，在运行大的数据集的时候可能会出现堆溢出的错误。
+有两种方法可以改变堆内存的大小
+- 在控制台运行`java -Xmx1500m -jar weka.jar`启动weka。
+- 或者修改安装目录下的`runweka.ini`配置文件。 
+```
+# placeholders ("#bla#" in command gets replaced with content of key "bla")
+# Note: "#wekajar#" gets replaced by the launcher class, since that jar gets
+#       provided as parameter
+maxheap=1024M
+# The MDI GUI
+#mainclass=weka.gui.Main
+```
+
+原先的逗号分隔的文本文件（csv）,导入weka中然后可以另存为arff文件，可以很清晰明了的看到哪些是连续型变量、哪些是离散变量。
+
+*kdd99 数据概览*
+```
+@relation attr
+
+@attribute duration numeric
+@attribute protocol_type {tcp,udp,icmp}
+@attribute service {http,smtp,finger,domain_u,auth,telnet,ftp,eco_i,ntp_u,ecr_i,other,private,pop_3,ftp_data,rje,time,mtp,link,remote_job,gopher,ssh,name,whois,domain,login,imap4,daytime,ctf,nntp,shell,IRC,nnsp,http_443,exec,printer,efs,courier,uucp,klogin,kshell,echo,discard,systat,supdup,iso_tsap,hostnames,csnet_ns,pop_2,sunrpc,uucp_path,netbios_ns,netbios_ssn,netbios_dgm,sql_net,vmnet,bgp,Z39_50,ldap,netstat,urh_i,X11,urp_i,pm_dump,tftp_u,tim_i,red_i}
+@attribute flag {SF,S1,REJ,S2,S0,S3,RSTO,RSTR,RSTOS0,OTH,SH}
+@attribute src_bytes numeric
+@attribute dst_bytes numeric
+@attribute land numeric
+@attribute wrong_fragment numeric
+@attribute urgent numeric
+...
+...
+@attribute dst_host_srv_serror_rate numeric
+@attribute dst_host_rerror_rate numeric
+@attribute dst_host_srv_rerror_rate numeric
+@attribute lable {normal.,buffer_overflow.,loadmodule.,perl.,neptune.,smurf.,guess_passwd.,pod.,teardrop.,portsweep.,ipsweep.,land.,ftp_write.,back.,imap.,satan.,phf.,nmap.,multihop.,warezmaster.,warezclient.,spy.,rootkit.}
+
+@data
+0,tcp,http,SF,181,5450,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,8,8,0,0,0,0,1,0,0,9,9,1,0,0.11,0,0,0,0,0,normal.
+0,tcp,http,SF,239,486,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,8,8,0,0,0,0,1,0,0,19,19,1,0,0.05,0,0,0,0,0,normal.
+...
+...
+
+```
+
+
+####进行预处理
+
+有些方法的使用对数据集的类型有要求，比如关联方法的话就要求是离散型的，如果有数值型的数据的话，那么就要对这些个属性进行离散化操作，同样的道理，有时候需要对数据进行规范化、正则化等操作，目的为了就是能够使用特定的算法，或者说是提高精度与训练速度等。。。
+
+####属性选择操作
+对这个数据集使用[信息增益](http://baike.baidu.com/view/1231985.htm?fr=aladdin)算法进行属性选择的时候内存溢出，故重新抽样选择了原数据的一半进行选择，采用10-fold交叉验证的选择方式进行。
+
+![pic]({{ site.qiniudn }}/weka/1.jpg)
+
+在右侧的列表中可以看到属性排名，信息量越大的越能很好的区分分类类别，故用来做分类属性的话更具有价值。
+
+*示例代码*
+
+```java
+public class WekaASE {
+
+	public static void main(String[] args) throws Exception {
+		// 1. 读取训练数据
+		Instances ins = null;
+		Classifier cfs = null;
+		File file = new File("data/kdd99.arff");
+		ArffLoader loader = new ArffLoader();
+		loader.setFile(file);
+		ins = loader.getDataSet();
+		ins.setClassIndex(ins.numAttributes() - 1);
+		//初始化搜索算法（search method）及属性评测算法（attribute evaluator）
+		Ranker rank = new Ranker();
+		InfoGainAttributeEval eval = new InfoGainAttributeEval();
+	    // 3.根据评测算法评测各个属性
+		eval.buildEvaluator(ins);
+        // 4.按照特定搜索算法对属性进行筛选
+        //在这里使用的Ranker算法仅仅是属性按照InfoGain的大小进行排序
+		int[] attrIndex = rank.search(eval, ins);
+		//5.打印结果信息 在这里我们了属性的排序结果同时将每个属性的InfoGain信息打印出来
+		StringBuffer attrIndexInfo = new StringBuffer();
+		StringBuffer attrInfoGainInfo = new StringBuffer();
+		attrIndexInfo.append("Selected attributes:");
+		attrInfoGainInfo.append("Ranked attributes:\n");
+		for (int i = 0; i < attrIndex.length; i++) {
+			attrIndexInfo.append(attrIndex[i]);
+			attrIndexInfo.append(",");
+			attrInfoGainInfo.append(eval.evaluateAttribute(attrIndex[i]));
+			attrInfoGainInfo.append("\t");
+			attrInfoGainInfo.append((ins.attribute(attrIndex[i]).name()));
+			attrInfoGainInfo.append("\n");
+		}
+		System.out.println(attrIndexInfo.toString());
+		System.out.println(attrInfoGainInfo.toString());
+
+	}
+}
+
+```
+
+
+
+###三、关联分析
+
+###四、分类探究
+
+###五、聚类分析
+
+###六、验证&评估
+
+###七、特征工程
+
+---
+华丽的分割线~~~
+####参考资料
+
+- [代码共享点击这里]()
+- [weka初步一](http://blog.csdn.net/anqiang1984/article/details/4040571)
+- [weka官方网站](http://www.cs.waikato.ac.nz/ml/weka/)
+- [Data Mining - Practical Machine Learning Tools and Techniques (3rd Ed)](http://www.cs.waikato.ac.nz/~ml/weka/book.html)
+
