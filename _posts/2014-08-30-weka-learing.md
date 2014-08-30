@@ -77,26 +77,25 @@ rainy,71,91,TRUE,no
 
 预处理页面
 
-![Alt text](blob:http%3A//maxiang.info/75312182-873d-450a-b84e-878c06647fdc)
+![pic]({{ site.qiniudn }}/images/1.jpg)
 
 详细说明
 
 Filters可分为两大类，supervised(监督、管理)和unsupervised。supervised下的方法需要类别标签，而unsupervised则不需要。attribute类别表示对特征做筛选，instance表示对样本做选择。
 
-![Alt text](blob:http%3A//maxiang.info/4055b38a-94ed-4c8d-9f22-c068765d641f)
+![pic]({{ site.qiniudn }}/images/2.jpg)
 
 选择训练算法&验证
 
-![Alt text](blob:http%3A//maxiang.info/dce085d5-a9f4-4404-a335-17d094ecac88)
+![pic]({{ site.qiniudn }}/images/3.jpg)
 
 查看相关评估结果
 
-![Alt text](blob:http%3A//maxiang.info/d68ceb21-2dec-4173-873a-b780b5dd4055)
+![pic]({{ site.qiniudn }}/images/4.jpg)
 
 可视化
 
-![Alt text](./1409038441060.png)
-
+![pic]({{ site.qiniudn }}/images/5.jpg)
 
 ####关联分析
 按照同样的流程进行处理，不同的是在结果中可以生成关联规则。注意的是其中算法属性的设置。
@@ -122,11 +121,13 @@ c) Conviction:P(A)P(!B)/P(A,!B) （!B表示B没有发生） Conviction也是用�
 12.verbose： 如果设置为真，则算法会以冗余模式运行。
 
 如图所示，具体参数可以点击more查看
-![Alt text](./1409039463648.png)
+
+![pic]({{ site.qiniudn }}/images/6.jpg)
 
 运行结果如图所示
-![Alt text](./1409039676713.png)
 
+
+![pic]({{ site.qiniudn }}/images/7.jpg)
 
 
 ###*more to be continue~~~*
