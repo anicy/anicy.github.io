@@ -77,21 +77,21 @@ rainy,71,91,TRUE,no
 
 预处理页面
 
-![Alt text](./1409024590772.png)
+![Alt text](blob:http%3A//maxiang.info/75312182-873d-450a-b84e-878c06647fdc)
 
 详细说明
 
 Filters可分为两大类，supervised(监督、管理)和unsupervised。supervised下的方法需要类别标签，而unsupervised则不需要。attribute类别表示对特征做筛选，instance表示对样本做选择。
 
-![Alt text](./1409024846469.png)
+![Alt text](blob:http%3A//maxiang.info/4055b38a-94ed-4c8d-9f22-c068765d641f)
 
 选择训练算法&验证
 
-![Alt text](./1409024959539.png)
+![Alt text](blob:http%3A//maxiang.info/dce085d5-a9f4-4404-a335-17d094ecac88)
 
 查看相关评估结果
 
-![Alt text](./1409025051937.png)
+![Alt text](blob:http%3A//maxiang.info/d68ceb21-2dec-4173-873a-b780b5dd4055)
 
 可视化
 
