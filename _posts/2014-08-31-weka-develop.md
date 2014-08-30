@@ -104,6 +104,8 @@ public class WekaTest {
 有两种方法可以改变堆内存的大小
 - 在控制台运行`java -Xmx1500m -jar weka.jar`启动weka。
 - 或者修改安装目录下的`runweka.ini`配置文件。 
+
+
 ```
 # placeholders ("#bla#" in command gets replaced with content of key "bla")
 # Note: "#wekajar#" gets replaced by the launcher class, since that jar gets
@@ -116,12 +118,17 @@ maxheap=1024M
 原先的逗号分隔的文本文件（csv）,导入weka中然后可以另存为arff文件，可以很清晰明了的看到哪些是连续型变量、哪些是离散变量。
 
 *kdd99 数据概览*
+
+
 ```
 @relation attr
 
 @attribute duration numeric
 @attribute protocol_type {tcp,udp,icmp}
-@attribute service {http,smtp,finger,domain_u,auth,telnet,ftp,eco_i,ntp_u,ecr_i,other,private,pop_3,ftp_data,rje,time,mtp,link,remote_job,gopher,ssh,name,whois,domain,login,imap4,daytime,ctf,nntp,shell,IRC,nnsp,http_443,exec,printer,efs,courier,uucp,klogin,kshell,echo,discard,systat,supdup,iso_tsap,hostnames,csnet_ns,pop_2,sunrpc,uucp_path,netbios_ns,netbios_ssn,netbios_dgm,sql_net,vmnet,bgp,Z39_50,ldap,netstat,urh_i,X11,urp_i,pm_dump,tftp_u,tim_i,red_i}
+@attribute service {http,smtp,finger,domain_u,auth,telnet,ftp,eco_i,ntp_u,ecr_i,other,private,pop_3,ftp_data,rje,
+time,mtp,link,remote_job,gopher,ssh,name,whois,domain,login,imap4,daytime,ctf,nntp,shell,IRC,nnsp,http_443,exec,
+printer,efs,courier,uucp,klogin,kshell,echo,discard,systat,supdup,iso_tsap,hostnames,csnet_ns,pop_2,sunrpc,uucp_path,
+netbios_ns,netbios_ssn,netbios_dgm,sql_net,vmnet,bgp,Z39_50,ldap,netstat,urh_i,X11,urp_i,pm_dump,tftp_u,tim_i,red_i}
 @attribute flag {SF,S1,REJ,S2,S0,S3,RSTO,RSTR,RSTOS0,OTH,SH}
 @attribute src_bytes numeric
 @attribute dst_bytes numeric
@@ -133,7 +140,8 @@ maxheap=1024M
 @attribute dst_host_srv_serror_rate numeric
 @attribute dst_host_rerror_rate numeric
 @attribute dst_host_srv_rerror_rate numeric
-@attribute lable {normal.,buffer_overflow.,loadmodule.,perl.,neptune.,smurf.,guess_passwd.,pod.,teardrop.,portsweep.,ipsweep.,land.,ftp_write.,back.,imap.,satan.,phf.,nmap.,multihop.,warezmaster.,warezclient.,spy.,rootkit.}
+@attribute lable {normal.,buffer_overflow.,loadmodule.,perl.,neptune.,smurf.,guess_passwd.,pod.,teardrop.,
+portsweep.,ipsweep.,land.,ftp_write.,back.,imap.,satan.,phf.,nmap.,multihop.,warezmaster.,warezclient.,spy.,rootkit.}
 
 @data
 0,tcp,http,SF,181,5450,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,8,8,0,0,0,0,1,0,0,9,9,1,0,0.11,0,0,0,0,0,normal.
