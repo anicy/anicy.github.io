@@ -7,11 +7,10 @@ group: navigation
 {% include JB/setup %}
 
 
-#### Projects List
 
 
 
-My Share Note
+####My Share Note
 
 ---
 
@@ -28,6 +27,10 @@ My Share Note
 - [车辆套牌分析....]()
 
 - [more](http://dcycome.vicp.net/about.html)
+
+
+
+#### Projects List
 
 
 ---
