@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "数据挖掘项目总结文档22"
+title: 数据挖掘项目总结文档22
 description: ""
 keywords: weka,ml,machine learning ,ml
 category: data mining
