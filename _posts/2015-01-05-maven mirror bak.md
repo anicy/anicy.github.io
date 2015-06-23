@@ -1,12 +1,13 @@
 ---
-title:   maven mirror bak
+title:   "maven mirror bak"
 description:   "happy wife, happy life ..."
-keywords:   "maven"
-category:   "Note"
+keywords:   maven
+category:   Note
 tags:   [maven] 
 ---
 
 
+{% include JB/setup %}
 - mirror
 ```
 <mirror>
