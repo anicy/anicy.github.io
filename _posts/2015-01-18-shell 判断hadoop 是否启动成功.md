@@ -1,4 +1,5 @@
 ---
+layout:  post
 title:   "shell 判断hadoop 是否启动成功"
 description:   "happy wife, happy life ..."
 keywords:   shell,hadoop

@@ -1,4 +1,5 @@
 ---
+layout:  post
 title:   "phoenix data process"
 description:   "happy wife, happy life ..."
 keywords:   phoenix

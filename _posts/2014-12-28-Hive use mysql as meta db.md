@@ -1,4 +1,5 @@
 ---
+layout:  post
 title:   "Hive use mysql as meta db"
 description:   "happy wife, happy life ..."
 keywords:   hive,mysql

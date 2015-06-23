@@ -1,4 +1,5 @@
 ---
+layout:  post
 title:   "Q命令在csv和tsv上使用sql语句"
 description:   "happy wife, happy life ..."
 keywords:   q

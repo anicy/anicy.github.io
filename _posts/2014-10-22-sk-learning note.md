@@ -1,4 +1,5 @@
 ---
+layout:  post
 title:   "sk-learning note"
 description:   "happy wife, happy life ..."
 keywords:   ml,tools

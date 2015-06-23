@@ -1,4 +1,5 @@
 ---
+layout:  post
 title:   "tiny and beautify"
 description:   "happy wife, happy life ..."
 keywords:   tools,command

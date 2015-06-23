@@ -1,4 +1,5 @@
 ---
+layout:  post
 title:   "Ubuntu 使用nginx部署flask应用"
 description:   "happy wife, happy life ..."
 keywords:   flask,nginx,ubuntu

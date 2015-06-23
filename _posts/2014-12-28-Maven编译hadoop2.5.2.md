@@ -1,4 +1,5 @@
 ---
+layout:  post
 title:   "Maven编译hadoop2.5.2"
 description:   "happy wife, happy life ..."
 keywords:   maven,hadoop

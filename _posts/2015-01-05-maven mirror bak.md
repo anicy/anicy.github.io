@@ -1,4 +1,5 @@
 ---
+layout:  post
 title:   "maven mirror bak"
 description:   "happy wife, happy life ..."
 keywords:   maven

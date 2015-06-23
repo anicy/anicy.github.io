@@ -1,4 +1,5 @@
 ---
+layout:  post
 title:   "something"
 description:   "happy wife, happy life ..."
 keywords:   others

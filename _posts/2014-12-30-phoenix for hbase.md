@@ -1,4 +1,5 @@
 ---
+layout:  post
 title:   "phoenix for hbase"
 description:   "happy wife, happy life ..."
 keywords:   hbase,phoenix

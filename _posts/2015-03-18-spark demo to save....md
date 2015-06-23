@@ -1,4 +1,5 @@
 ---
+layout:  post
 title:   "spark demo to save..."
 description:   "happy wife, happy life ..."
 keywords:   spark

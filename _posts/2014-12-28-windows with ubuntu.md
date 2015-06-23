@@ -1,4 +1,5 @@
 ---
+layout:  post
 title:   "windows with ubuntu"
 description:   "happy wife, happy life ..."
 keywords:   win,os,ubuntu
