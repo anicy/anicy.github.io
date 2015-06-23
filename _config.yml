@@ -26,10 +26,10 @@ author :
   weibo : SupreDream
 
 # 域名连接
-production_url : http://dcycome.vicp.net
+production_url : http://blog.needpp.com
 
 # 七牛云，http://<Bucket>.qiniudn.com
-qiniudn : http://dcycome.qiniudn.com 
+qiniudn : http://needpp.qiniudn.com 
 
 
 
